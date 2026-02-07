@@ -2,73 +2,69 @@ import React from 'react';
 
 const CaseStudySection = () => {
   return (
-    <section className="bg-white py-20 px-4">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-5xl font-bold text-center text-gray-800 mb-16">
-          Real Results from Real Brands
-        </h2>
+    <section className="bg-white py-24 px-6">
+      <div className="max-w-5xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-4">
+          <span className="inline-block text-sm font-semibold tracking-widest uppercase text-amber-600 mb-4">Case Study</span>
+          <h2 className="text-4xl sm:text-5xl font-black text-gray-900 mb-6">
+            Real Results. Real Savings.
+          </h2>
+        </div>
         
-        <div className="bg-gray-50 rounded-2xl p-12 shadow-xl">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Logo and Company Info */}
-            <div className="text-center md:text-left">
-              <div className="mb-8">
-                {/* Placeholder for Real Provisions logo */}
-                <div className="w-48 h-24 bg-gradient-to-r from-green-600 to-green-800 rounded-lg mx-auto md:mx-0 flex items-center justify-center">
-                  <span className="text-white font-bold text-2xl">Real Provisions</span>
-                </div>
-              </div>
-              
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                "Keep Your Cookies helped us identify massive inefficiencies in our payroll and software stack. 
-                The AI analysis revealed overlapping tools and overstaffed departments we never noticed."
-              </p>
-              
-              {/* Team photo placeholder */}
-              <div className="w-full h-48 bg-gradient-to-br from-gray-300 to-gray-400 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-gray-600 text-lg">Real Provisions Team</span>
-              </div>
-              <p className="text-sm text-gray-500">Mansal Denton, Founder & CEO</p>
+        {/* Case Study Card */}
+        <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl overflow-hidden border border-gray-200">
+          {/* Top bar with logo */}
+          <div className="bg-gradient-to-r from-green-700 to-green-900 px-8 py-6 flex items-center justify-between">
+            <div>
+              <h3 className="text-white text-2xl font-bold">Real Provisions</h3>
+              <p className="text-green-200 text-sm">Premium Care Package Company</p>
             </div>
-            
-            {/* Stats */}
-            <div className="space-y-8">
-              <div className="text-center">
-                <div className="bg-green-100 rounded-2xl p-8 mb-4">
-                  <div className="flex items-center justify-center space-x-4">
-                    <span className="text-5xl font-bold text-green-700">↓ 24%</span>
-                  </div>
-                  <p className="text-2xl font-semibold text-green-800 mt-2">Payroll costs</p>
-                  <p className="text-gray-600 mt-1">Eliminated redundant roles and optimized team structure</p>
+            <div className="hidden sm:block text-white/60 text-sm">
+              Client since 2025
+            </div>
+          </div>
+          
+          {/* Stats Row */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-gray-200">
+            <div className="p-8 text-center">
+              <div className="text-4xl sm:text-5xl font-black text-green-600 mb-2">24%</div>
+              <div className="text-sm font-semibold text-gray-500 uppercase tracking-wide">Payroll Reduced</div>
+              <p className="text-xs text-gray-400 mt-2">Eliminated redundant roles</p>
+            </div>
+            <div className="p-8 text-center">
+              <div className="text-4xl sm:text-5xl font-black text-blue-600 mb-2">39%</div>
+              <div className="text-sm font-semibold text-gray-500 uppercase tracking-wide">SaaS Costs Cut</div>
+              <p className="text-xs text-gray-400 mt-2">Consolidated overlapping tools</p>
+            </div>
+            <div className="p-8 text-center">
+              <div className="text-4xl sm:text-5xl font-black text-amber-600 mb-2">$47K</div>
+              <div className="text-sm font-semibold text-gray-500 uppercase tracking-wide">Monthly Savings</div>
+              <p className="text-xs text-gray-400 mt-2">$564K annually</p>
+            </div>
+          </div>
+          
+          {/* Quote */}
+          <div className="px-8 pb-8">
+            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-gray-100">
+              <svg className="w-8 h-8 text-amber-400 mb-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+              </svg>
+              <p className="text-lg sm:text-xl text-gray-700 leading-relaxed mb-6">
+                We went from hemorrhaging money on tools we barely used to a lean, efficient operation. 
+                The AI analysis revealed overlapping subscriptions and overstaffed departments we never noticed.
+              </p>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-700 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                  M
                 </div>
-              </div>
-              
-              <div className="text-center">
-                <div className="bg-blue-100 rounded-2xl p-8">
-                  <div className="flex items-center justify-center space-x-4">
-                    <span className="text-5xl font-bold text-blue-700">↓ 39%</span>
-                  </div>
-                  <p className="text-2xl font-semibold text-blue-800 mt-2">SaaS costs</p>
-                  <p className="text-gray-600 mt-1">Consolidated overlapping tools and found better alternatives</p>
+                <div>
+                  <p className="font-bold text-gray-900">Mansal Denton</p>
+                  <p className="text-sm text-gray-500">Founder & CEO, Real Provisions</p>
                 </div>
-              </div>
-              
-              <div className="text-center bg-amber-50 rounded-2xl p-6">
-                <p className="text-lg font-semibold text-amber-800">
-                  💰 Total monthly savings: <span className="text-2xl">$47,000</span>
-                </p>
-                <p className="text-amber-700 mt-2">That's over $564,000 per year back in their pocket</p>
               </div>
             </div>
           </div>
-        </div>
-        
-        <div className="text-center mt-12">
-          <p className="text-xl text-gray-600 italic">
-            "We went from hemorrhaging money on tools we barely used to a lean, efficient operation. 
-            Best decision we made this year."
-          </p>
-          <p className="text-gray-500 mt-2">— Real Provisions Leadership Team</p>
         </div>
       </div>
     </section>
