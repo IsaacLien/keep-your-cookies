@@ -4,46 +4,46 @@ const monsters = [
   {
     name: "Shopify",
     color: "#95BF47",
-    bgLight: "rgba(149,191,71,0.1)",
-    borderColor: "rgba(149,191,71,0.3)",
+    bgGradient: "from-[#95BF47]/10 to-[#95BF47]/5",
+    borderColor: "#95BF47",
     description: "Platform fees",
-    icon: "🛒",
+    image: "/monsters/shopify.png",
     bite: "$299/mo+",
   },
   {
     name: "Klaviyo",
     color: "#004B50",
-    bgLight: "rgba(0,75,80,0.1)",
-    borderColor: "rgba(0,75,80,0.3)",
+    bgGradient: "from-[#004B50]/10 to-[#004B50]/5",
+    borderColor: "#004B50",
     description: "Email marketing",
-    icon: "✉️",
+    image: "/monsters/klaviyo.png",
     bite: "$1,500/mo+",
   },
   {
     name: "Refersion",
     color: "#FF6B47",
-    bgLight: "rgba(255,107,71,0.1)",
-    borderColor: "rgba(255,107,71,0.3)",
+    bgGradient: "from-[#FF6B47]/10 to-[#FF6B47]/5",
+    borderColor: "#FF6B47",
     description: "Affiliate marketing",
-    icon: "🤝",
+    image: "/monsters/refersion.png",
     bite: "$599/mo+",
   },
   {
     name: "QuickBooks",
     color: "#2CA01C",
-    bgLight: "rgba(44,160,28,0.1)",
-    borderColor: "rgba(44,160,28,0.3)",
+    bgGradient: "from-[#2CA01C]/10 to-[#2CA01C]/5",
+    borderColor: "#2CA01C",
     description: "Payroll costs",
-    icon: "💰",
+    image: "/monsters/quickbooks.png",
     bite: "$2,000/mo+",
   },
   {
     name: "Skio",
     color: "#6366F1",
-    bgLight: "rgba(99,102,241,0.1)",
-    borderColor: "rgba(99,102,241,0.3)",
-    description: "Subscriber management",
-    icon: "🔄",
+    bgGradient: "from-[#6366F1]/10 to-[#6366F1]/5",
+    borderColor: "#6366F1",
+    description: "Subscriptions",
+    image: "/monsters/skio.png",
     bite: "$799/mo+",
   },
 ];
@@ -53,101 +53,91 @@ const CookieMonsterSection = () => {
     <section className="bg-[#faf7f2] py-24 px-6 overflow-hidden">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mb-6">
-            Who's eating your <span className="text-red-500">cookies</span>?
+        <div className="text-center mb-8">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mb-6 leading-tight">
+            Who's eating your{' '}
+            <span className="text-red-500">cookies</span>?
           </h2>
           <p className="text-lg sm:text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
-            Every month, these tools take a bigger bite out of your revenue. 
-            Most founders don't realize how much until it's too late.
+            Your revenue is the cookie jar. These are the monsters eating it — 
+            one subscription at a time.
           </p>
         </div>
 
-        {/* Cookie Jar - Center */}
-        <div className="flex justify-center mb-16">
+        {/* Central Cookie Jar visual */}
+        <div className="flex justify-center my-16">
           <div className="relative">
-            <div className="w-40 h-40 sm:w-52 sm:h-52 bg-gradient-to-br from-amber-300 to-amber-500 rounded-3xl rotate-3 flex items-center justify-center shadow-2xl shadow-amber-500/20">
-              <div className="text-center -rotate-3">
+            <div className="w-44 h-44 sm:w-56 sm:h-56 bg-gradient-to-br from-amber-200 via-amber-300 to-amber-400 rounded-[2rem] rotate-2 flex items-center justify-center shadow-xl shadow-amber-400/20 border-4 border-amber-300/50">
+              <div className="-rotate-2 text-center">
                 <div className="text-5xl sm:text-6xl mb-1">🍪</div>
-                <p className="text-sm sm:text-base font-bold text-amber-900">Your Revenue</p>
+                <p className="text-amber-900 font-extrabold text-sm sm:text-base tracking-tight">YOUR REVENUE</p>
               </div>
             </div>
-            {/* Floating cookie crumbs */}
-            <div className="absolute -top-4 -right-4 text-2xl animate-bounce" style={{ animationDelay: '0s' }}>🍪</div>
-            <div className="absolute -bottom-3 -left-5 text-xl animate-bounce" style={{ animationDelay: '0.5s' }}>🍪</div>
-            <div className="absolute -top-2 -left-6 text-lg animate-bounce" style={{ animationDelay: '1s' }}>🍪</div>
-          </div>
-        </div>
-        
-        {/* Arrow down */}
-        <div className="flex justify-center mb-12">
-          <div className="flex flex-col items-center gap-1 text-gray-400">
-            <span className="text-sm font-medium tracking-widest uppercase">Gets devoured by</span>
-            <span className="text-2xl">↓</span>
+            {/* Crumbs */}
+            <div className="absolute -top-5 -right-5 text-3xl animate-bounce" style={{ animationDelay: '0s', animationDuration: '2s' }}>🍪</div>
+            <div className="absolute -bottom-4 -left-6 text-2xl animate-bounce" style={{ animationDelay: '0.7s', animationDuration: '2.5s' }}>🍪</div>
+            <div className="absolute top-0 -left-8 text-xl animate-bounce" style={{ animationDelay: '1.2s', animationDuration: '3s' }}>🍪</div>
+            <div className="absolute -bottom-2 -right-7 text-xl animate-bounce" style={{ animationDelay: '0.4s', animationDuration: '2.2s' }}>🍪</div>
           </div>
         </div>
 
-        {/* Monster Cards - responsive grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-          {monsters.map((monster) => (
+        {/* Monsters Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5 sm:gap-6">
+          {monsters.map((monster, i) => (
             <div
               key={monster.name}
-              className="group relative rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 cursor-pointer border"
+              className="group relative bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-5 transition-all duration-500 hover:-translate-y-3 hover:shadow-xl cursor-pointer border border-gray-100 overflow-hidden"
               style={{
-                backgroundColor: monster.bgLight,
-                borderColor: monster.borderColor,
+                animationDelay: `${i * 100}ms`,
               }}
             >
-              {/* Monster "eyes" */}
-              <div className="flex justify-center gap-2 mb-4">
-                <div className="w-5 h-5 bg-white rounded-full shadow-inner flex items-center justify-center">
-                  <div className="w-3 h-3 bg-gray-900 rounded-full relative">
-                    <div className="w-1 h-1 bg-white rounded-full absolute top-0.5 left-0.5"></div>
-                  </div>
-                </div>
-                <div className="w-5 h-5 bg-white rounded-full shadow-inner flex items-center justify-center">
-                  <div className="w-3 h-3 bg-gray-900 rounded-full relative">
-                    <div className="w-1 h-1 bg-white rounded-full absolute top-0.5 left-0.5"></div>
-                  </div>
+              {/* Colored top bar */}
+              <div 
+                className="absolute top-0 left-0 right-0 h-1 rounded-t-3xl"
+                style={{ backgroundColor: monster.color }}
+              />
+              
+              {/* Monster Image */}
+              <div className="relative mb-3 flex justify-center">
+                <img 
+                  src={monster.image} 
+                  alt={`${monster.name} monster`}
+                  className="w-28 h-28 sm:w-32 sm:h-32 object-contain group-hover:scale-110 transition-transform duration-500 drop-shadow-lg"
+                />
+                {/* Nom nom bubble on hover */}
+                <div className="absolute -top-2 -right-1 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-white text-[10px] font-bold text-red-500 px-2 py-1 rounded-full shadow-md border border-red-100 whitespace-nowrap">
+                  nom nom! 🍪
                 </div>
               </div>
               
-              {/* Icon */}
-              <div className="text-3xl text-center mb-3">{monster.icon}</div>
-              
               {/* Name */}
               <h3 
-                className="font-bold text-lg text-center mb-1"
+                className="font-extrabold text-base sm:text-lg text-center mb-0.5 tracking-tight"
                 style={{ color: monster.color }}
               >
                 {monster.name}
               </h3>
               
               {/* Description */}
-              <p className="text-sm text-gray-500 text-center mb-3">
+              <p className="text-xs sm:text-sm text-gray-400 text-center mb-2">
                 {monster.description}
               </p>
               
-              {/* Bite size */}
+              {/* Cost bite */}
               <div className="text-center">
-                <span className="inline-block bg-white/80 text-xs font-mono font-bold text-red-500 px-3 py-1 rounded-full">
+                <span className="inline-block bg-red-50 text-[11px] sm:text-xs font-bold text-red-500 px-2.5 py-1 rounded-full border border-red-100">
                   {monster.bite}
                 </span>
-              </div>
-
-              {/* "Nom nom" on hover */}
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-xs font-bold text-red-400 bg-white px-2 py-1 rounded-full shadow">
-                nom nom 🍪
               </div>
             </div>
           ))}
         </div>
         
-        {/* Bottom stat */}
+        {/* Bottom callout */}
         <div className="mt-16 text-center">
-          <div className="inline-flex items-center gap-3 bg-red-50 border border-red-100 rounded-full px-6 py-3">
-            <span className="text-red-500 text-xl">⚠️</span>
-            <span className="text-gray-700 font-medium">
+          <div className="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-3 bg-red-50 border border-red-100 rounded-2xl px-6 py-4">
+            <span className="text-2xl">⚠️</span>
+            <span className="text-gray-700 font-medium text-sm sm:text-base text-center">
               Average e-commerce brand loses <strong className="text-red-600">$5,000–$15,000/mo</strong> to tool bloat
             </span>
           </div>
