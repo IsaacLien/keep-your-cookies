@@ -1,4 +1,6 @@
 import React, { useState, useMemo } from 'react';
+import { submitForm } from '../utils/submitForm';
+import ScrollReveal from './ScrollReveal';
 
 const FormSection = () => {
   const [formData, setFormData] = useState({
@@ -51,14 +53,21 @@ const FormSection = () => {
     setShowPopup(true);
   };
 
-  const handleEmailSubmit = (e) => {
+  const handleEmailSubmit = async (e) => {
     e.preventDefault();
     if (!emailData.name || !emailData.email || !emailData.storeUrl) {
       alert('Please fill in all fields');
       return;
     }
-    console.log('Form Data:', formData);
-    console.log('Email Data:', emailData);
+    
+    // Submit the form data using the submitForm utility
+    try {
+      const result = await submitForm({ ...formData, ...emailData });
+      console.log('Form submission successful:', result);
+    } catch (error) {
+      console.error('Form submission error:', error);
+    }
+    
     setShowPopup(false);
     setShowThankYou(true);
     setFormData({ monthlyRevenue: '', monthlyPayroll: '', monthlySoftware: '' });
@@ -77,7 +86,7 @@ const FormSection = () => {
     <section id="form-section" className="bg-[#0a0a0a] py-20 sm:py-28 px-6">
       <div className="max-w-3xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
+        <ScrollReveal className="text-center mb-12">
           <h2 className="text-4xl sm:text-5xl font-black text-white mb-4">
             How much are you
             <span className="text-red-500"> leaking</span>?
@@ -85,10 +94,11 @@ const FormSection = () => {
           <p className="text-gray-400 text-base sm:text-lg max-w-xl mx-auto">
             Enter your numbers. We'll estimate the waste.
           </p>
-        </div>
+        </ScrollReveal>
         
         {/* Form Card */}
-        <div className="bg-white/[0.04] backdrop-blur border border-white/10 rounded-3xl p-6 sm:p-10">
+        <ScrollReveal delay={0.2}>
+          <div className="bg-white/[0.04] backdrop-blur border border-white/10 rounded-3xl p-6 sm:p-10">
           <form onSubmit={handleFormSubmit} className="space-y-5">
             <div>
               <label className="block text-sm font-semibold text-gray-300 mb-2 uppercase tracking-wide">
@@ -170,13 +180,8 @@ const FormSection = () => {
           <p className="text-center text-xs text-gray-600 mt-4 flex items-center justify-center gap-1.5">
             <span>🔒</span> Your data is 100% confidential. We never share your numbers.
           </p>
-        </div>
-
-        {/* Social proof under form */}
-        <div className="flex items-center justify-center gap-3 mt-8 text-sm text-gray-500">
-          <span className="text-amber-500 text-lg">⭐⭐⭐⭐⭐</span>
-          <span>Trusted by 150+ e-commerce brands</span>
-        </div>
+          </div>
+        </ScrollReveal>
       </div>
       
       {/* Email Popup */}

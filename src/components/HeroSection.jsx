@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollReveal from './ScrollReveal';
 
 const HeroSection = () => {
   const scrollToForm = () => {
@@ -9,7 +10,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-b from-[#FFF8E7] via-[#FFF0CC] to-[#FFE4A0] text-gray-900 overflow-hidden">
+    <section className="hero-section relative min-h-screen bg-gradient-to-b from-[#FFF8E7] via-[#FFF0CC] to-[#FFE4A0] text-gray-900 overflow-hidden">
       
       {/* ===== DESKTOP HERO ===== */}
       <div className="hidden md:flex items-center justify-center min-h-screen px-8 lg:px-16">
@@ -33,59 +34,67 @@ const HeroSection = () => {
               See my cost leaks
               <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
             </button>
-
-            {/* Trust signal */}
-            <div className="mt-8 flex items-center gap-3 text-sm text-gray-500">
-              <span className="flex -space-x-2">
-                <span className="w-8 h-8 rounded-full bg-amber-200 border-2 border-white flex items-center justify-center text-xs">🍪</span>
-                <span className="w-8 h-8 rounded-full bg-orange-200 border-2 border-white flex items-center justify-center text-xs">🍪</span>
-                <span className="w-8 h-8 rounded-full bg-red-200 border-2 border-white flex items-center justify-center text-xs">🍪</span>
-              </span>
-              <span>Trusted by e-commerce brands everywhere</span>
-            </div>
           </div>
 
           {/* Right: Composed hero — cookie jar + floating monsters */}
           <div className="relative flex items-center justify-center" style={{ minHeight: '500px' }}>
             {/* Central cookie jar */}
-            <img 
-              src="/images/cookie-jar.png" 
-              alt="Cookie jar full of your revenue" 
-              className="w-64 lg:w-72 xl:w-80 animate-gentle-bob relative z-10"
-              style={{ filter: 'drop-shadow(0 20px 40px rgba(180, 120, 60, 0.25))' }}
-            />
+            <picture>
+              <source srcSet="/images/cookie-jar.webp" type="image/webp" />
+              <img 
+                src="/images/cookie-jar.png" 
+                alt="Cookie jar full of your revenue" 
+                className="w-64 lg:w-72 xl:w-80 animate-gentle-bob relative z-10"
+                style={{ filter: 'drop-shadow(0 20px 40px rgba(180, 120, 60, 0.25))' }}
+              />
+            </picture>
             
             {/* Monsters reaching for the jar */}
-            <img 
-              src="/monsters/hero-monster.png" 
-              alt="" 
-              className="absolute w-32 lg:w-36 animate-float-slow z-20"
-              style={{ top: '-5%', left: '8%', transform: 'rotate(-12deg)', filter: 'drop-shadow(0 8px 20px rgba(0,0,0,0.15))' }}
-            />
-            <img 
-              src="/monsters/shopify.png" 
-              alt="" 
-              className="absolute w-28 lg:w-32 animate-float-medium z-20"
-              style={{ top: '5%', right: '5%', transform: 'rotate(10deg)', filter: 'drop-shadow(0 8px 20px rgba(0,0,0,0.15))' }}
-            />
-            <img 
-              src="/monsters/klaviyo.png" 
-              alt="" 
-              className="absolute w-28 lg:w-32 animate-float-slow z-5"
-              style={{ bottom: '5%', left: '2%', transform: 'rotate(8deg)', animationDelay: '0.5s', filter: 'drop-shadow(0 8px 20px rgba(0,0,0,0.15))' }}
-            />
-            <img 
-              src="/monsters/skio.png" 
-              alt="" 
-              className="absolute w-26 lg:w-30 animate-float-medium z-5"
-              style={{ bottom: '0%', right: '8%', transform: 'rotate(-8deg) scaleX(-1)', animationDelay: '1s', filter: 'drop-shadow(0 8px 20px rgba(0,0,0,0.15))' }}
-            />
-            <img 
-              src="/monsters/refersion.png" 
-              alt="" 
-              className="absolute w-24 lg:w-28 animate-float-slow z-5"
-              style={{ top: '45%', right: '-2%', transform: 'rotate(15deg)', animationDelay: '1.5s', filter: 'drop-shadow(0 8px 20px rgba(0,0,0,0.15))' }}
-            />
+            <picture>
+              <source srcSet="/monsters/hero-monster.webp" type="image/webp" />
+              <img 
+                src="/monsters/hero-monster.png" 
+                alt="" 
+                className="absolute w-32 lg:w-36 animate-float-slow z-20"
+                style={{ top: '-5%', left: '8%', transform: 'rotate(-12deg)', filter: 'drop-shadow(0 8px 20px rgba(0,0,0,0.15))' }}
+              />
+            </picture>
+            <picture>
+              <source srcSet="/monsters/shopify.webp" type="image/webp" />
+              <img 
+                src="/monsters/shopify.png" 
+                alt="" 
+                className="absolute w-28 lg:w-32 animate-float-medium z-20"
+                style={{ top: '5%', right: '5%', transform: 'rotate(10deg)', filter: 'drop-shadow(0 8px 20px rgba(0,0,0,0.15))' }}
+              />
+            </picture>
+            <picture>
+              <source srcSet="/monsters/klaviyo.webp" type="image/webp" />
+              <img 
+                src="/monsters/klaviyo.png" 
+                alt="" 
+                className="absolute w-28 lg:w-32 animate-float-slow z-5"
+                style={{ bottom: '5%', left: '2%', transform: 'rotate(8deg)', animationDelay: '0.5s', filter: 'drop-shadow(0 8px 20px rgba(0,0,0,0.15))' }}
+              />
+            </picture>
+            <picture>
+              <source srcSet="/monsters/skio.webp" type="image/webp" />
+              <img 
+                src="/monsters/skio.png" 
+                alt="" 
+                className="absolute w-26 lg:w-30 animate-float-medium z-5"
+                style={{ bottom: '0%', right: '8%', transform: 'rotate(-8deg) scaleX(-1)', animationDelay: '1s', filter: 'drop-shadow(0 8px 20px rgba(0,0,0,0.15))' }}
+              />
+            </picture>
+            <picture>
+              <source srcSet="/monsters/refersion.webp" type="image/webp" />
+              <img 
+                src="/monsters/refersion.png" 
+                alt="" 
+                className="absolute w-24 lg:w-28 animate-float-slow z-5"
+                style={{ top: '45%', right: '-2%', transform: 'rotate(15deg)', animationDelay: '1.5s', filter: 'drop-shadow(0 8px 20px rgba(0,0,0,0.15))' }}
+              />
+            </picture>
             
             {/* Floating cookies */}
             <span className="absolute -top-4 right-16 text-4xl animate-float-slow z-30">🍪</span>
@@ -101,38 +110,53 @@ const HeroSection = () => {
         {/* Composed illustration: cookie jar + monsters */}
         <div className="relative z-10 mb-8" style={{ width: '300px', height: '320px' }}>
           {/* Central cookie jar */}
-          <img 
-            src="/images/cookie-jar.png" 
-            alt="Cookie jar full of your revenue" 
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-48 animate-gentle-bob z-10"
-            style={{ filter: 'drop-shadow(0 12px 30px rgba(180, 120, 60, 0.25))' }}
-          />
+          <picture>
+            <source srcSet="/images/cookie-jar.webp" type="image/webp" />
+            <img 
+              src="/images/cookie-jar.png" 
+              alt="Cookie jar full of your revenue" 
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-48 animate-gentle-bob z-10"
+              style={{ filter: 'drop-shadow(0 12px 30px rgba(180, 120, 60, 0.25))' }}
+            />
+          </picture>
           
           {/* Monsters around the jar */}
-          <img 
-            src="/monsters/hero-monster.png" 
-            alt="" 
-            className="absolute w-24 animate-float-slow z-20"
-            style={{ top: '-8%', left: '2%', transform: 'rotate(-10deg)', filter: 'drop-shadow(0 6px 15px rgba(0,0,0,0.15))' }}
-          />
-          <img 
-            src="/monsters/shopify.png" 
-            alt="" 
-            className="absolute w-22 animate-float-medium z-20"
-            style={{ top: '-2%', right: '0%', transform: 'rotate(10deg)', filter: 'drop-shadow(0 6px 15px rgba(0,0,0,0.15))' }}
-          />
-          <img 
-            src="/monsters/klaviyo.png" 
-            alt="" 
-            className="absolute w-22 animate-float-slow z-5"
-            style={{ bottom: '0%', left: '0%', transform: 'rotate(8deg)', animationDelay: '0.5s', filter: 'drop-shadow(0 6px 15px rgba(0,0,0,0.15))' }}
-          />
-          <img 
-            src="/monsters/skio.png" 
-            alt="" 
-            className="absolute w-20 animate-float-medium z-5"
-            style={{ bottom: '2%', right: '2%', transform: 'rotate(-8deg) scaleX(-1)', animationDelay: '1s', filter: 'drop-shadow(0 6px 15px rgba(0,0,0,0.15))' }}
-          />
+          <picture>
+            <source srcSet="/monsters/hero-monster.webp" type="image/webp" />
+            <img 
+              src="/monsters/hero-monster.png" 
+              alt="" 
+              className="absolute w-24 animate-float-slow z-20"
+              style={{ top: '-8%', left: '2%', transform: 'rotate(-10deg)', filter: 'drop-shadow(0 6px 15px rgba(0,0,0,0.15))' }}
+            />
+          </picture>
+          <picture>
+            <source srcSet="/monsters/shopify.webp" type="image/webp" />
+            <img 
+              src="/monsters/shopify.png" 
+              alt="" 
+              className="absolute w-22 animate-float-medium z-20"
+              style={{ top: '-2%', right: '0%', transform: 'rotate(10deg)', filter: 'drop-shadow(0 6px 15px rgba(0,0,0,0.15))' }}
+            />
+          </picture>
+          <picture>
+            <source srcSet="/monsters/klaviyo.webp" type="image/webp" />
+            <img 
+              src="/monsters/klaviyo.png" 
+              alt="" 
+              className="absolute w-22 animate-float-slow z-5"
+              style={{ bottom: '0%', left: '0%', transform: 'rotate(8deg)', animationDelay: '0.5s', filter: 'drop-shadow(0 6px 15px rgba(0,0,0,0.15))' }}
+            />
+          </picture>
+          <picture>
+            <source srcSet="/monsters/skio.webp" type="image/webp" />
+            <img 
+              src="/monsters/skio.png" 
+              alt="" 
+              className="absolute w-20 animate-float-medium z-5"
+              style={{ bottom: '2%', right: '2%', transform: 'rotate(-8deg) scaleX(-1)', animationDelay: '1s', filter: 'drop-shadow(0 6px 15px rgba(0,0,0,0.15))' }}
+            />
+          </picture>
           
           {/* Floating cookies */}
           <span className="absolute -top-2 right-8 text-3xl animate-float-slow z-30">🍪</span>

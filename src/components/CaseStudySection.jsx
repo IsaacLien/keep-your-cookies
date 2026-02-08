@@ -1,19 +1,21 @@
 import React from 'react';
+import ScrollReveal from './ScrollReveal';
 
 const CaseStudySection = () => {
   return (
     <section className="bg-white py-24 px-6">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-4">
+        <ScrollReveal className="text-center mb-4">
           <span className="inline-block text-sm font-semibold tracking-widest uppercase text-amber-600 mb-4">Case Study</span>
           <h2 className="text-4xl sm:text-5xl font-black text-gray-900 mb-6">
             Real Results. Real Savings.
           </h2>
-        </div>
+        </ScrollReveal>
         
         {/* Case Study Card */}
-        <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl overflow-hidden border border-gray-200">
+        <ScrollReveal delay={0.2}>
+          <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl overflow-hidden border border-gray-200">
           {/* Top bar with logo */}
           <div className="bg-gradient-to-r from-green-700 to-green-900 px-8 py-6 flex items-center justify-between">
             <div>
@@ -65,7 +67,8 @@ const CaseStudySection = () => {
               </div>
             </div>
           </div>
-        </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
