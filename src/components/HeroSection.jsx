@@ -50,8 +50,12 @@ const HeroSection = () => {
             <img 
               src="/images/hero-scene.png" 
               alt="Cookie monsters reaching for your revenue" 
-              className="w-full max-w-xl drop-shadow-2xl animate-gentle-bob"
-              style={{ filter: 'drop-shadow(0 20px 60px rgba(245, 158, 11, 0.3))' }}
+              className="w-full max-w-xl animate-gentle-bob"
+              style={{ 
+                WebkitMaskImage: 'radial-gradient(ellipse 90% 85% at center, black 40%, transparent 80%)',
+                maskImage: 'radial-gradient(ellipse 90% 85% at center, black 40%, transparent 80%)',
+                filter: 'drop-shadow(0 20px 60px rgba(245, 158, 11, 0.15))'
+              }}
             />
             {/* Floating cookies around illustration */}
             <span className="absolute -top-8 right-10 text-4xl animate-float-slow">🍪</span>
@@ -78,8 +82,12 @@ const HeroSection = () => {
           <img 
             src="/images/hero-scene.png" 
             alt="Cookie monsters reaching for your revenue" 
-            className="w-72 h-auto drop-shadow-xl animate-gentle-bob"
-            style={{ filter: 'drop-shadow(0 12px 40px rgba(245, 158, 11, 0.3))' }}
+            className="w-80 h-auto animate-gentle-bob"
+            style={{ 
+              WebkitMaskImage: 'radial-gradient(ellipse 90% 85% at center, black 35%, transparent 75%)',
+              maskImage: 'radial-gradient(ellipse 90% 85% at center, black 35%, transparent 75%)',
+              filter: 'drop-shadow(0 12px 40px rgba(245, 158, 11, 0.15))'
+            }}
           />
         </div>
 
