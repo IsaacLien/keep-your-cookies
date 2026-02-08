@@ -45,7 +45,7 @@ const HowItWorksSection = () => {
                 <ScrollReveal delay={index * 0.2}>
                   <div className="flex flex-col items-center text-center max-w-xs">
                     {/* Number circle */}
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 flex items-center justify-center text-white font-bold text-2xl mb-4">
+                    <div className="w-16 h-16 rounded-full bg-amber-600 flex items-center justify-center text-white font-bold text-2xl mb-4">
                       {step.number}
                     </div>
                     
@@ -94,7 +94,7 @@ const HowItWorksSection = () => {
               <ScrollReveal delay={index * 0.15}>
                 <div className="flex flex-col items-center text-center">
                   {/* Number circle */}
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-r from-amber-400 to-amber-600 flex items-center justify-center text-white font-bold text-2xl mb-4">
+                  <div className="w-16 h-16 rounded-full bg-amber-600 flex items-center justify-center text-white font-bold text-2xl mb-4">
                     {step.number}
                   </div>
                   

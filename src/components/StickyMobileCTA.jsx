@@ -41,7 +41,7 @@ const StickyMobileCTA = () => {
       <div className="bg-white shadow-lg border-t border-gray-100 px-4 py-3">
         <button
           onClick={scrollToForm}
-          className="w-full py-4 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 text-white font-semibold rounded-lg hover:from-amber-500 hover:via-amber-600 hover:to-amber-700 transition-all duration-200 shadow-lg active:scale-95"
+          className="w-full py-4 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-lg transition-all duration-200 shadow-lg active:scale-95"
         >
           Get Free Analysis →
         </button>

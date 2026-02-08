@@ -44,7 +44,7 @@ const NavBar = () => {
           {/* CTA Button */}
           <button
             onClick={scrollToForm}
-            className="px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 text-white font-semibold rounded-lg hover:from-amber-500 hover:via-amber-600 hover:to-amber-700 transition-all duration-200 shadow-lg hover:shadow-xl text-sm md:text-base"
+            className="px-4 py-2 md:px-6 md:py-3 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-lg transition-all duration-200 shadow-sm hover:shadow-md text-sm md:text-base"
           >
             Get Free Analysis →
           </button>

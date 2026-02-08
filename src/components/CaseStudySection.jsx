@@ -15,9 +15,9 @@ const CaseStudySection = () => {
         
         {/* Case Study Card */}
         <ScrollReveal delay={0.2}>
-          <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl overflow-hidden border border-gray-200">
+          <div className="bg-gray-50 rounded-3xl overflow-hidden border border-gray-200 shadow-sm">
           {/* Top bar with logo */}
-          <div className="bg-gradient-to-r from-green-700 to-green-900 px-8 py-6 flex items-center justify-between">
+          <div className="bg-green-800 px-8 py-6 flex items-center justify-between">
             <div>
               <h3 className="text-white text-2xl font-bold">Real Provisions</h3>
               <p className="text-green-200 text-sm">Premium Care Package Company</p>
@@ -57,7 +57,7 @@ const CaseStudySection = () => {
                 The AI analysis revealed overlapping subscriptions and overstaffed departments we never noticed.
               </p>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-700 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
                   M
                 </div>
                 <div>

@@ -83,25 +83,25 @@ const FormSection = () => {
   };
 
   return (
-    <section id="form-section" className="bg-[#0a0a0a] py-20 sm:py-28 px-6">
+    <section id="form-section" className="bg-gradient-to-b from-[#FFF8E7] to-[#FFF0CC] py-20 sm:py-28 px-6">
       <div className="max-w-3xl mx-auto">
         {/* Header */}
         <ScrollReveal className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-black text-white mb-4">
+          <h2 className="text-4xl sm:text-5xl font-black text-gray-900 mb-4">
             How much are you
-            <span className="text-red-500"> leaking</span>?
+            <span className="text-red-600"> leaking</span>?
           </h2>
-          <p className="text-gray-400 text-base sm:text-lg max-w-xl mx-auto">
+          <p className="text-gray-600 text-base sm:text-lg max-w-xl mx-auto">
             Enter your numbers. We'll estimate the waste.
           </p>
         </ScrollReveal>
         
         {/* Form Card */}
         <ScrollReveal delay={0.2}>
-          <div className="bg-white/[0.04] backdrop-blur border border-white/10 rounded-3xl p-6 sm:p-10">
+          <div className="bg-white border border-amber-100 rounded-3xl p-6 sm:p-10 shadow-sm">
           <form onSubmit={handleFormSubmit} className="space-y-5">
             <div>
-              <label className="block text-sm font-semibold text-gray-300 mb-2 uppercase tracking-wide">
+              <label className="block text-sm font-semibold text-gray-700 mb-2 uppercase tracking-wide">
                 Monthly Revenue
               </label>
               <div className="relative">
@@ -112,13 +112,13 @@ const FormSection = () => {
                   value={formData.monthlyRevenue}
                   onChange={handleInputChange}
                   placeholder="250,000"
-                  className="w-full pl-10 pr-4 py-4 bg-white/5 border border-white/10 rounded-xl text-white text-lg placeholder:text-gray-600 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50 transition-colors"
+                  className="w-full pl-10 pr-4 py-4 bg-amber-50 border border-amber-200 rounded-xl text-gray-900 text-lg placeholder:text-gray-500 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500/30 transition-colors"
                 />
               </div>
             </div>
             
             <div>
-              <label className="block text-sm font-semibold text-gray-300 mb-2 uppercase tracking-wide">
+              <label className="block text-sm font-semibold text-gray-700 mb-2 uppercase tracking-wide">
                 Monthly Payroll
               </label>
               <div className="relative">
@@ -129,13 +129,13 @@ const FormSection = () => {
                   value={formData.monthlyPayroll}
                   onChange={handleInputChange}
                   placeholder="45,000"
-                  className="w-full pl-10 pr-4 py-4 bg-white/5 border border-white/10 rounded-xl text-white text-lg placeholder:text-gray-600 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50 transition-colors"
+                  className="w-full pl-10 pr-4 py-4 bg-amber-50 border border-amber-200 rounded-xl text-gray-900 text-lg placeholder:text-gray-500 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500/30 transition-colors"
                 />
               </div>
             </div>
             
             <div>
-              <label className="block text-sm font-semibold text-gray-300 mb-2 uppercase tracking-wide">
+              <label className="block text-sm font-semibold text-gray-700 mb-2 uppercase tracking-wide">
                 Monthly Software Costs
               </label>
               <div className="relative">
@@ -146,7 +146,7 @@ const FormSection = () => {
                   value={formData.monthlySoftware}
                   onChange={handleInputChange}
                   placeholder="8,500"
-                  className="w-full pl-10 pr-4 py-4 bg-white/5 border border-white/10 rounded-xl text-white text-lg placeholder:text-gray-600 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500/50 transition-colors"
+                  className="w-full pl-10 pr-4 py-4 bg-amber-50 border border-amber-200 rounded-xl text-gray-900 text-lg placeholder:text-gray-500 focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500/30 transition-colors"
                 />
               </div>
             </div>
@@ -171,13 +171,13 @@ const FormSection = () => {
             
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-black font-bold text-lg py-4 rounded-xl transition-all duration-300 shadow-[0_0_30px_rgba(245,158,11,0.3)] hover:shadow-[0_0_50px_rgba(245,158,11,0.5)] mt-2"
+              className="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold text-lg py-4 rounded-xl transition-all duration-200 shadow-sm hover:shadow-md mt-2"
             >
               See my cost leaks →
             </button>
           </form>
           
-          <p className="text-center text-xs text-gray-600 mt-4 flex items-center justify-center gap-1.5">
+          <p className="text-center text-xs text-gray-500 mt-4 flex items-center justify-center gap-1.5">
             <span>🔒</span> Your data is 100% confidential. We never share your numbers.
           </p>
           </div>
@@ -186,50 +186,50 @@ const FormSection = () => {
       
       {/* Email Popup */}
       {showPopup && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 px-6">
-          <div className="bg-[#1a1a1a] border border-white/10 rounded-3xl p-8 max-w-md w-full shadow-2xl">
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 px-6">
+          <div className="bg-white border border-amber-200 rounded-3xl p-8 max-w-md w-full shadow-2xl">
             <div className="text-center mb-6">
               <div className="text-4xl mb-3">📊</div>
-              <h3 className="text-2xl font-bold text-white mb-2">Your Report is Ready</h3>
-              <p className="text-gray-400 text-sm">Tell us where to send your personalized cost analysis</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Your Report is Ready</h3>
+              <p className="text-gray-600 text-sm">Tell us where to send your personalized cost analysis</p>
             </div>
             
             <form onSubmit={handleEmailSubmit} className="space-y-4">
               <div>
-                <label className="block text-sm font-semibold text-gray-300 mb-2">Your Name</label>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Your Name</label>
                 <input
                   type="text"
                   name="name"
                   value={emailData.name}
                   onChange={handleEmailInputChange}
                   placeholder="John Smith"
-                  className="w-full px-4 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-gray-600 focus:border-amber-500 focus:outline-none transition-colors"
+                  className="w-full px-4 py-3.5 bg-amber-50 border border-amber-200 rounded-xl text-gray-900 placeholder:text-gray-500 focus:border-amber-500 focus:outline-none transition-colors"
                   required
                 />
               </div>
               
               <div>
-                <label className="block text-sm font-semibold text-gray-300 mb-2">Email Address</label>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
                 <input
                   type="email"
                   name="email"
                   value={emailData.email}
                   onChange={handleEmailInputChange}
                   placeholder="john@yourstore.com"
-                  className="w-full px-4 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-gray-600 focus:border-amber-500 focus:outline-none transition-colors"
+                  className="w-full px-4 py-3.5 bg-amber-50 border border-amber-200 rounded-xl text-gray-900 placeholder:text-gray-500 focus:border-amber-500 focus:outline-none transition-colors"
                   required
                 />
               </div>
               
               <div>
-                <label className="block text-sm font-semibold text-gray-300 mb-2">Store URL</label>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">Store URL</label>
                 <input
                   type="url"
                   name="storeUrl"
                   value={emailData.storeUrl}
                   onChange={handleEmailInputChange}
                   placeholder="https://yourstore.com"
-                  className="w-full px-4 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder:text-gray-600 focus:border-amber-500 focus:outline-none transition-colors"
+                  className="w-full px-4 py-3.5 bg-amber-50 border border-amber-200 rounded-xl text-gray-900 placeholder:text-gray-500 focus:border-amber-500 focus:outline-none transition-colors"
                   required
                 />
               </div>
@@ -238,20 +238,20 @@ const FormSection = () => {
                 <button
                   type="button"
                   onClick={() => setShowPopup(false)}
-                  className="flex-1 bg-white/5 hover:bg-white/10 text-gray-300 font-semibold py-3.5 rounded-xl transition-colors border border-white/10"
+                  className="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-3.5 rounded-xl transition-colors border border-gray-200"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="flex-1 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-black font-bold py-3.5 rounded-xl transition-colors"
+                  className="flex-1 bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3.5 rounded-xl transition-colors"
                 >
                   Send My Report →
                 </button>
               </div>
             </form>
             
-            <p className="text-xs text-gray-600 text-center mt-4">
+            <p className="text-xs text-gray-500 text-center mt-4">
               We'll email your personalized cost analysis within 24 hours.
             </p>
           </div>

@@ -29,7 +29,7 @@ const HeroSection = () => {
             
             <button 
               onClick={scrollToForm}
-              className="group relative bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-white font-bold text-lg px-10 py-4 rounded-full transition-all duration-300 shadow-[0_8px_30px_rgba(245,158,11,0.4)] hover:shadow-[0_12px_40px_rgba(245,158,11,0.5)] hover:-translate-y-0.5"
+              className="group relative bg-amber-600 hover:bg-amber-700 text-white font-semibold text-lg px-10 py-4 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
             >
               See my cost leaks
               <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
@@ -90,7 +90,7 @@ const HeroSection = () => {
           
           <button 
             onClick={scrollToForm}
-            className="group bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-white font-bold text-lg px-10 py-4 rounded-full transition-all duration-300 shadow-[0_8px_30px_rgba(245,158,11,0.4)]"
+            className="group bg-amber-600 hover:bg-amber-700 text-white font-semibold text-lg px-10 py-4 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl"
           >
             See my cost leaks
             <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
