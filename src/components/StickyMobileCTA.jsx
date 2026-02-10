@@ -1,52 +1,50 @@
 import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const StickyMobileCTA = () => {
   const [showCTA, setShowCTA] = useState(false);
 
   useEffect(() => {
-    const heroSection = document.querySelector('.hero-section'); // We'll need to add this class to HeroSection
-    
+    const heroSection = document.querySelector('.hero-section');
     if (!heroSection) return;
 
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        // Show CTA when hero is not in view (user scrolled past it)
-        setShowCTA(!entry.isIntersecting);
-      },
-      {
-        threshold: 0.1,
-      }
+      ([entry]) => setShowCTA(!entry.isIntersecting),
+      { threshold: 0.1 }
     );
 
     observer.observe(heroSection);
-
-    return () => {
-      observer.unobserve(heroSection);
-    };
+    return () => observer.unobserve(heroSection);
   }, []);
 
   const scrollToForm = () => {
-    const formSection = document.getElementById('form-section');
-    if (formSection) {
-      formSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    document.getElementById('form-section')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <div
-      className={`fixed bottom-0 left-0 right-0 z-40 md:hidden transition-transform duration-300 ${
-        showCTA ? 'translate-y-0' : 'translate-y-full'
-      }`}
-    >
-      <div className="bg-white shadow-lg border-t border-gray-100 px-4 py-3">
-        <button
-          onClick={scrollToForm}
-          className="w-full py-4 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-lg transition-all duration-200 shadow-lg active:scale-95"
+    <AnimatePresence>
+      {showCTA && (
+        <motion.div
+          initial={{ y: 100 }}
+          animate={{ y: 0 }}
+          exit={{ y: 100 }}
+          transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+          className="fixed bottom-0 left-0 right-0 z-40 md:hidden"
         >
-          Get Free Analysis →
-        </button>
-      </div>
-    </div>
+          <div className="glass shadow-[0_-4px_20px_rgba(0,0,0,0.06)] px-4 py-3 safe-area-bottom">
+            <button
+              onClick={scrollToForm}
+              className="w-full py-3.5 btn-primary rounded-xl text-base font-semibold active:scale-[0.98] transition-transform flex items-center justify-center gap-2"
+            >
+              Get Free Analysis
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </button>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 

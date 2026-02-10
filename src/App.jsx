@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
 import './App.css';
 import NavBar from './components/NavBar';
 import HeroSection from './components/HeroSection';
+import LogoStrip from './components/LogoStrip';
 import CookieMonsterSection from './components/CookieMonsterSection';
 import HowItWorksSection from './components/HowItWorksSection';
 import CaseStudySection from './components/CaseStudySection';
@@ -12,9 +12,10 @@ import StickyMobileCTA from './components/StickyMobileCTA';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App antialiased">
       <NavBar />
       <HeroSection />
+      <LogoStrip />
       <CookieMonsterSection />
       <HowItWorksSection />
       <CaseStudySection />
